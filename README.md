@@ -1,231 +1,202 @@
-BrightData Job Lead Scraping & Verification System
+# BrightData Lead Generation & Job Scraping Automation
 
-Technical Proposal (Detailed)
+## Overview
 
-1. Project Understanding
+This document explains the **end-to-end automated workflow** for collecting job and company leads using **Bright Data APIs**, processing them via Python, and delivering clean, verified data directly to your application database.
 
-This project aims to build a reliable, scalable job-lead discovery and verification system that integrates directly with your existing AI-powered job application platform.
+The goal of this MVP is **zero manual work**, full API-driven automation, and a scalable foundation that can be extended later.
 
-The system will:
+---
 
-Discover jobs from multiple job boards
+## High-Level Architecture
 
-Normalize job data into a fixed schema
+1. Job data is fetched automatically from job boards using APIs
+2. Raw responses are normalized and structured using Python
+3. Missing company data is enriched (website, emails, profiles)
+4. Emails and websites are verified
+5. Final data is pushed to your backend endpoints
 
-Enrich company information
+No manual scraping, copying, or uploads are required.
 
-Find and verify HR / career-related emails
+---
 
-Sync clean, verified data into your application via API
+## Step 1: Job Data Collection (Automated)
 
-This proposal strictly follows the workflow shared in your document.
+### Supported Sources
 
-2. Overall Architecture
+**Option A: Bright Data (Primary)**
 
-Data Sources
+* LinkedIn Jobs
+* Indeed
+* Glassdoor
+* Foundit
+* Wellfound
+* Other regional or remote job boards
 
-Bright Data APIs (LinkedIn, Indeed, Glassdoor, Wellfound, Foundit, Remote job boards)
+**Option B: OpenWebNinja – JSearch API (Fallback)**
 
-OpenWebNinja JSearch API (optional / fallback, if preferred)
+* Can be used in parallel or selectively
 
-Processing Layers
+Data is fetched automatically using APIs based on filters such as:
 
-Job discovery & normalization
+* Job title and keywords
+* Location (India, USA, Europe, etc.)
+* Remote / onsite preference
+* Posted date
+* Employment type
 
-Company & website enrichment
+---
 
-Email discovery & verification
+## Step 2: Processing Pipeline (Python)
 
-Data validation & filtering
+The API responses are processed using a Python pipeline that:
 
-API sync to your job platform
+* Cleans raw job data
+* Normalizes fields into a consistent schema
+* Removes duplicates
+* Prepares records for enrichment and verification
 
-3. Phase 1 – Job Discovery & Normalization
-Job Boards Supported
+### Current Structured Output
 
-LinkedIn
+Each job record is converted into a machine-readable format containing:
 
-Indeed
+* Source (LinkedIn, Indeed, etc.)
+* Job ID
+* Job title
+* Job location
+* Job description (HTML + plain text)
+* Job URL and apply URL
+* Posted and expiry dates
+* Company name
+* Company website (if available)
 
-Glassdoor
+This confirms that the pipeline is:
 
-Wellfound
+* Fully API-driven
+* Machine-readable
+* Ready for direct backend integration
 
-Foundit
+---
 
-Remote-only job boards
+## Step 3: Company & Contact Enrichment
 
-Other job boards as required
+If any required fields are missing, the system automatically enriches them:
 
-Output Schema (Row Job Data)
+* Company website discovery
+* HR / Careers page detection
+* Company email discovery
+* Founder / hiring manager profiles (LinkedIn)
+* Founder or HR email discovery (when applicable)
 
-{
+Priority order for contact discovery:
 
-  "sr_no": "internal_unique_id",
-  
-  "source": "linkedin / indeed / glassdoor",
-  
-  "job_id": "",
-  
-  "job_title": "",
-  
-  "job_location": "",
-  
-  "job_description_html": "",
-  
-  "job_description_text": "",
-  
-  "job_industry": "",
-  
-  "job_url": "",
-  
-  "job_apply_url": "",
-  
-  "job_posted_date": "",
-  
-  "job_expire_date": "",
-  
-  "employment_type": "",
-  
-  "salary_info": ""
-}
+1. HR or Careers page email
+2. Verified company email
+3. Founder or hiring manager email
 
+---
 
-Jobs are filtered based on:
+## Step 4: Email & Website Verification
 
-Job titles (UX, UI, Product Design roles)
+All discovered emails and websites are verified using API-based validation:
 
-Keywords (Senior / Remote / Designer variations)
+* Invalid or risky emails are filtered out
+* Verified contacts are tagged and marked safe
+* Already-verified API results are reused (no re-verification)
 
-Location (India, USA, Europe, APAC)
+This ensures high-quality, usable leads only.
 
-Work preference (Remote / Hybrid / Onsite)
+---
 
-Posted date (Last 24h, 3 days, 7 days, 30 days)
-
-4. Phase 2 – Company & Contact Enrichment
-
-For each job:
-
-Website Discovery
-
-If company website is missing:
-
-Website is discovered via search & metadata matching
-
-Verified domain is attached to job record
-
-Email Discovery Priority Logic
-
-HR / Career page email (highest priority)
-
-Official company email
-
-Founder / decision-maker email (only if required)
-
-If HR or career email is verified, no further emails are collected.
-
-5. Phase 3 – Email Verification
-
-All discovered emails are verified
-
-Disposable / risky emails are excluded
-
-Already verified emails from APIs are skipped
-
-Only verified emails are sent to the app
-
-This reduces bounce risk and keeps outreach clean.
-
-6. Data Transfer to Your Application
+## Step 5: Data Transfer to Your Application
 
 Two data streams are supported:
 
-Raw Job Rows
-→ Used for AI processing, ranking, or enrichment
+1. **Raw Jobs** – all collected job records
+2. **Verified Jobs** – jobs with verified company/contact details
 
-Verified Job Records
-→ Ready for outreach or application workflows
+Both datasets can be:
 
-Data is synced using your provided endpoint APIs.
+* Pushed directly to your existing API endpoints
+* Stored in CSV/JSON if required
 
-7. Pricing Model (Clear & Transparent)
-One-Time Setup
+Your existing backend endpoints can be reused, with minor adjustments if needed.
 
-End-to-end workflow design
+---
 
-Bright Data configuration
+## Automation Guarantee (No Manual Work)
 
-Email discovery & verification logic
+* No manual browsing
+* No copy-paste
+* No human intervention after setup
+* Fully scheduled or on-demand execution
 
-API sync & documentation
+Once configured, the system runs independently.
 
-₹900 (one-time)
+---
 
-Managed Scraping (Single Batch Jobs)
-Volume (single task)	Fee
-1,000 jobs	₹600
-5,000 jobs	₹2,500
-10,000 jobs	₹4,500
+## Bright Data Usage & Cost Transparency
 
-Single batch means one continuous job run
-(not split into multiple smaller tasks)
+* Bright Data usage is billed **directly to your Bright Data account**
+* No markup on usage costs
+* Full visibility via Bright Data dashboard
 
-Usage Costs (Important)
+Typical usage cost depends on:
 
-Bright Data / OpenWebNinja usage is paid directly by client
+* Number of job pages scraped
+* Email verification strictness
+* Retry logic and refresh frequency
 
-Billing stays fully under your account
+Exact estimates can be provided once target sources are finalized.
 
-Complete transparency on consumption
+---
 
-8. Ownership & Transparency
+## My Service Scope
 
-Client owns all API keys
+### One-Time Setup
 
-Client owns all scraped & verified data
+* End-to-end workflow design
+* Bright Data API configuration
+* Python processing pipeline
+* Backend endpoint integration
+* Documentation
 
-No data is reused or resold
+### Optional Managed Runs
 
-Full documentation provided for scaling or modifying rules
+If required, I can also:
 
-9. Notes on Email & Website Availability
+* Run scraping tasks on your behalf
+* Monitor failures
+* Optimize cost and accuracy
 
-Some domains or email servers may:
+---
 
-Block incoming connections
+## MVP Focus
 
-Temporarily fail validation
+This setup is designed specifically for:
 
-Use strict security rules
+* MVP validation
+* Fast deployment
+* Clean, scalable architecture
 
-In such cases:
+The same system can later be extended with:
 
-Alternate verified emails are attempted
+* AI-based job relevance scoring
+* Lead prioritization
+* Advanced tagging and analytics
 
-Records are flagged clearly
+---
 
-No unverified data is pushed blindly
+## Next Steps (No Live Call Required)
 
-10. Next Steps
+I can provide:
 
-Confirm:
+* Screenshots of API runs
+* Sample structured output
+* Step-by-step explanation of automation flow
 
-Job boards to prioritize
+This can be shared asynchronously without a live demo.
 
-Target countries
+---
 
-Initial batch size
-
-Share:
-
-API endpoint details
-
-Preferred schedule (daily / weekly)
-
-Workflow setup begins immediately after confirmation
-
-Closing
-
-This system is designed for long-term scalability, not just scraping.
-It aligns perfectly with AI-driven job discovery and outreach platforms.
+If you would like, we can proceed immediately with finalizing sources and filters and move this into production.
