@@ -1,202 +1,104 @@
-# BrightData Lead Generation & Job Scraping Automation
+Yes, that’s correct.
 
-## Overview
+For the MVP stage, the setup is designed so you do not need continuous help from me.
 
-This document explains the **end-to-end automated workflow** for collecting job and company leads using **Bright Data APIs**, processing them via Python, and delivering clean, verified data directly to your application database.
+Once configured, you can:
 
-The goal of this MVP is **zero manual work**, full API-driven automation, and a scalable foundation that can be extended later.
+Trigger runs on demand
 
----
+Update inputs (keywords, locations, filters) without coding
 
-## High-Level Architecture
+Receive structured output directly in your system
 
-1. Job data is fetched automatically from job boards using APIs
-2. Raw responses are normalized and structured using Python
-3. Missing company data is enriched (website, emails, profiles)
-4. Emails and websites are verified
-5. Final data is pushed to your backend endpoints
+No code changes are required for normal usage.
 
-No manual scraping, copying, or uploads are required.
+🔹 Scope & Pricing Clarification (Important)
 
----
+₹900 – MVP Setup Includes
 
-## Step 1: Job Data Collection (Automated)
+Bright Data API configuration
 
-### Supported Sources
+Workflow setup & validation
 
-**Option A: Bright Data (Primary)**
+Demo scraping run with sample output (for review only)
 
-* LinkedIn Jobs
-* Indeed
-* Glassdoor
-* Foundit
-* Wellfound
-* Other regional or remote job boards
+This stage is meant to prove the pipeline and data flow, not to hand over full automation scripts.
 
-**Option B: OpenWebNinja – JSearch API (Fallback)**
+🔹 Full Self-Managed Automation (Optional Add-On)
 
-* Can be used in parallel or selectively
+If you want to fully manage everything yourself, including:
 
-Data is fetched automatically using APIs based on filters such as:
+Running large-scale scraping independently
 
-* Job title and keywords
-* Location (India, USA, Europe, etc.)
-* Remote / onsite preference
-* Posted date
-* Employment type
+Cleaning, enrichment & verification logic
 
----
+Uploading data to your backend endpoints
 
-## Step 2: Processing Pipeline (Python)
+Running bulk jobs anytime without my involvement
 
-The API responses are processed using a Python pipeline that:
+then I provide the complete Python automation package as a one-time add-on (₹5,000).
 
-* Cleans raw job data
-* Normalizes fields into a consistent schema
-* Removes duplicates
-* Prepares records for enrichment and verification
+✅ After this:
 
-### Current Structured Output
+You can run small or large-scale scraping on your own
 
-Each job record is converted into a machine-readable format containing:
+No dependency on me for regular operations
 
-* Source (LinkedIn, Indeed, etc.)
-* Job ID
-* Job title
-* Job location
-* Job description (HTML + plain text)
-* Job URL and apply URL
-* Posted and expiry dates
-* Company name
-* Company website (if available)
+No recurring fees
 
-This confirms that the pipeline is:
+No limitations on volume (only Bright Data usage cost applies)
 
-* Fully API-driven
-* Machine-readable
-* Ready for direct backend integration
+🔹 Future Support (Only If Needed)
 
----
+Managed production runs
 
-## Step 3: Company & Contact Enrichment
+Scheduled scraping
 
-If any required fields are missing, the system automatically enriches them:
+Monitoring or optimization
 
-* Company website discovery
-* HR / Careers page detection
-* Company email discovery
-* Founder / hiring manager profiles (LinkedIn)
-* Founder or HR email discovery (when applicable)
+These are not mandatory and can be discussed only if you request them later.
 
-Priority order for contact discovery:
+🔹 Summary
 
-1. HR or Careers page email
-2. Verified company email
-3. Founder or hiring manager email
+MVP (₹900): API setup + demo validation
 
----
+Full ownership (₹5,000 one-time): Complete automation + large-scale self-run capability
 
-## Step 4: Email & Website Verification
+Bright Data usage is always billed directly to your account
 
-All discovered emails and websites are verified using API-based validation:
 
-* Invalid or risky emails are filtered out
-* Verified contacts are tagged and marked safe
-* Already-verified API results are reused (no re-verification)
 
-This ensures high-quality, usable leads only.
+Operational Support (Optional – Paid Execution)
 
----
+One more clarification for transparency:
 
-## Step 5: Data Transfer to Your Application
+If you prefer that I personally run the scraping + cleaning + upload tasks for you on a daily or weekly basis (instead of you running them yourself), this will be treated as manual execution support, not part of the MVP setup.
 
-Two data streams are supported:
+Pricing for manual execution:
 
-1. **Raw Jobs** – all collected job records
-2. **Verified Jobs** – jobs with verified company/contact details
+₹2,000 per execution task
 
-Both datasets can be:
+Minimum appointment: 10 tasks (₹20,000 total)
 
-* Pushed directly to your existing API endpoints
-* Stored in CSV/JSON if required
+Each execution task typically includes:
 
-Your existing backend endpoints can be reused, with minor adjustments if needed.
+Running scrapers across configured sources
 
----
+Cleaning & validating data
 
-## Automation Guarantee (No Manual Work)
+Uploading final output to your website / API
 
-* No manual browsing
-* No copy-paste
-* No human intervention after setup
-* Fully scheduled or on-demand execution
+Basic sanity checks
 
-Once configured, the system runs independently.
+⏱️ A single execution usually takes ~2 hours.
 
----
+If at any point:
 
-## Bright Data Usage & Cost Transparency
+The data volume is very large (for example ~100,000 records in one run), or
 
-* Bright Data usage is billed **directly to your Bright Data account**
-* No markup on usage costs
-* Full visibility via Bright Data dashboard
+The execution time exceeds ~2 hours
 
-Typical usage cost depends on:
+then the support will be charged at ₹1,000 per additional hour, based on actual time spent.
 
-* Number of job pages scraped
-* Email verification strictness
-* Retry logic and refresh frequency
-
-Exact estimates can be provided once target sources are finalized.
-
----
-
-## My Service Scope
-
-### One-Time Setup
-
-* End-to-end workflow design
-* Bright Data API configuration
-* Python processing pipeline
-* Backend endpoint integration
-* Documentation
-
-### Optional Managed Runs
-
-If required, I can also:
-
-* Run scraping tasks on your behalf
-* Monitor failures
-* Optimize cost and accuracy
-
----
-
-## MVP Focus
-
-This setup is designed specifically for:
-
-* MVP validation
-* Fast deployment
-* Clean, scalable architecture
-
-The same system can later be extended with:
-
-* AI-based job relevance scoring
-* Lead prioritization
-* Advanced tagging and analytics
-
----
-
-## Next Steps (No Live Call Required)
-
-I can provide:
-
-* Screenshots of API runs
-* Sample structured output
-* Step-by-step explanation of automation flow
-
-This can be shared asynchronously without a live demo.
-
----
-
-If you would like, we can proceed immediately with finalizing sources and filters and move this into production.
+This support is completely optional.
+You can always run everything yourself using the automation setup, and opt for manual execution only when needed.
