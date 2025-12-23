@@ -1,104 +1,90 @@
-Yes, that’s correct.
+# Image Data Collection for Text Recognition – Proposal
 
-For the MVP stage, the setup is designed so you do not need continuous help from me.
+## Overview
+I am confident in delivering this image data collection project with high quality, accuracy, and full compliance with your guidelines. I have experience working with OCR-oriented datasets, structured data delivery, and strict quality validation.
 
-Once configured, you can:
+This proposal outlines my understanding of the task, execution approach, and delivery plan.
 
-Trigger runs on demand
+---
 
-Update inputs (keywords, locations, filters) without coding
+## Understanding of Requirements
 
-Receive structured output directly in your system
+The project requires:
+- Real-world photographs containing visible text
+- No screenshots or web-sourced images
+- Asset definition: **1 asset = 3 images of the same object from different angles**
+- Categories including (but not limited to):
+  - Business cards
+  - Advertisements
+  - Public signage
+  - Receipts (grocery, hotel, food/dining)
+  - Schedules (bus timetables, store hours)
+  - Flyers with business information
+  - Invoices
+- Proper framing, text clarity, and accurate tagging
+- Avoidance of personal or sensitive information (PII)
+- Target **95%+ usable rate** after review
+- Upload via **Google Form** for tracking and management
 
-No code changes are required for normal usage.
+---
 
-🔹 Scope & Pricing Clarification (Important)
+## Execution Approach
 
-₹900 – MVP Setup Includes
+### Data Collection
+- Capture only real-world images using camera devices
+- Ensure readable text, correct angles, and consistent lighting
+- Maintain category-wise separation of assets
 
-Bright Data API configuration
+### Quality Control
+- Manual review of each image before submission
+- Ensure all assets meet clarity and framing standards
+- Remove or re-capture any non-compliant images
 
-Workflow setup & validation
+### Data Organization
+- Images grouped per asset (3 images per object)
+- Clear naming convention for easy review
+- Structured metadata ready for OCR / text recognition workflows
 
-Demo scraping run with sample output (for review only)
+---
 
-This stage is meant to prove the pipeline and data flow, not to hand over full automation scripts.
+## Delivery Plan
 
-🔹 Full Self-Managed Automation (Optional Add-On)
+- Initial **sample dataset** for quality validation
+- Full-scale data collection after approval
+- Upload via Google Form as requested
+- Clean and organized final dataset
 
-If you want to fully manage everything yourself, including:
+---
 
-Running large-scale scraping independently
+## Budget Alignment
 
-Cleaning, enrichment & verification logic
+- Budget understood: **$0.20 per asset**
+- Comfortable working at scale while maintaining quality standards
 
-Uploading data to your backend endpoints
+---
 
-Running bulk jobs anytime without my involvement
+## Optional Clarifications
 
-then I provide the complete Python automation package as a one-time add-on (₹5,000).
+- Preferred image naming convention (if any)
+- Google Form template provided or to be created by me
 
-✅ After this:
+---
 
-You can run small or large-scale scraping on your own
+## Why Me
 
-No dependency on me for regular operations
+- Experience in OCR and text-recognition-ready datasets
+- Strong understanding of data quality compliance
+- Comfortable with Excel / CSV / structured data workflows
+- Clear communication and sample-first delivery approach
 
-No recurring fees
+---
 
-No limitations on volume (only Bright Data usage cost applies)
+## Reference
 
-🔹 Future Support (Only If Needed)
+Detailed technical and execution approach:  
+👉 https://github.com/bhajan-sir-analysis/Proposal/blob/main/README.md
 
-Managed production runs
+---
 
-Scheduled scraping
-
-Monitoring or optimization
-
-These are not mandatory and can be discussed only if you request them later.
-
-🔹 Summary
-
-MVP (₹900): API setup + demo validation
-
-Full ownership (₹5,000 one-time): Complete automation + large-scale self-run capability
-
-Bright Data usage is always billed directly to your account
-
-
-
-Operational Support (Optional – Paid Execution)
-
-One more clarification for transparency:
-
-If you prefer that I personally run the scraping + cleaning + upload tasks for you on a daily or weekly basis (instead of you running them yourself), this will be treated as manual execution support, not part of the MVP setup.
-
-Pricing for manual execution:
-
-₹2,000 per execution task
-
-Minimum appointment: 10 tasks (₹20,000 total)
-
-Each execution task typically includes:
-
-Running scrapers across configured sources
-
-Cleaning & validating data
-
-Uploading final output to your website / API
-
-Basic sanity checks
-
-⏱️ A single execution usually takes ~2 hours.
-
-If at any point:
-
-The data volume is very large (for example ~100,000 records in one run), or
-
-The execution time exceeds ~2 hours
-
-then the support will be charged at ₹1,000 per additional hour, based on actual time spent.
-
-This support is completely optional.
-You can always run everything yourself using the automation setup, and opt for manual execution only when needed.
+**Best regards,**  
+Bhajan
