@@ -1,4 +1,5 @@
 📊 Financial Data Entry & Record Management Project
+
 📌 Project Overview
 
 This project focuses on converting raw financial documents into clean, accurate, and well-structured digital records.
@@ -98,10 +99,4 @@ Larger datasets can be handled
 
 Long-term support is available
 
-🔐 Project Status
 
-✔ Initial proposal submitted
-
-✔ Ready to start immediately
-
-✔ Awaiting client confirmation
